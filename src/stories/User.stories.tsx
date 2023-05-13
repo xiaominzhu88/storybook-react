@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { User } from './Example';
+import { RandomUser } from './User';
 import { faker } from '@faker-js/faker';
 
 function createRandomUser() {
@@ -19,9 +19,9 @@ const randomUsers = faker.helpers.multiple(createRandomUser, {
 	count: 50,
 });
 
-const meta: Meta<typeof User> = {
+const meta: Meta<typeof RandomUser> = {
 	title: 'Example/User',
-	component: User,
+	component: RandomUser,
 };
 
 export default meta;

@@ -1,6 +1,6 @@
 import { SexType } from '@faker-js/faker';
 import { format } from 'date-fns';
-import './Example.css';
+import './User.css';
 
 export interface UserType {
 	email: string;
@@ -14,7 +14,7 @@ export interface RandomUserType extends UserType {
 	color?: string;
 }
 
-export const User = ({ randomUsers, color }: RandomUserType) => {
+export const RandomUser = ({ randomUsers, color }: RandomUserType) => {
 	return (
 		<div className={color === 'hotpink' ? 'pink' : 'blue'}>
 			{randomUsers.map(
