@@ -14,24 +14,20 @@ export interface RandomUserType extends UserType {
 	color?: string;
 }
 
-export const RandomUser = ({ randomUsers, color }: RandomUserType) => {
-	return (
-		<div className={color === 'hotpink' ? 'pink' : 'blue'}>
-			{randomUsers.map(
-				({ email, firstName, lastName, sex, birthday }: UserType) => {
-					return (
-						<div>
-							Hello from {firstName} {lastName} 👐
-							<br />
-							<br />
-							<div>Sex: {sex === 'female' ? '👩' : '👨'}</div>
-							<div>Birthday: {format(new Date(birthday), 'dd-MM-yyyy')}</div>
-							<div>Email: {email}</div>
-							<hr />
-						</div>
-					);
-				},
-			)}
-		</div>
-	);
-};
+export const RandomUser = ({ randomUsers, color }: RandomUserType) => (
+	<div className={color === 'hotpink' ? 'pink' : 'blue'}>
+		{randomUsers.map(
+			({ email, firstName, lastName, sex, birthday }: UserType) => (
+				<>
+					Hello from {firstName} {lastName} 👐
+					<br />
+					<br />
+					<div>Sex: {sex === 'female' ? '👩' : '👨'}</div>
+					<div>Birthday: {format(new Date(birthday), 'dd-MM-yyyy')}</div>
+					<div>Email: {email}</div>
+					<hr />
+				</>
+			),
+		)}
+	</div>
+);
